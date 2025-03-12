@@ -1,6 +1,6 @@
 ## Getting Started
 
-First, run the development:
+Run the development:
 
 ```bash
 npm run dev
@@ -14,7 +14,7 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-First, run the server:
+Run the server:
 
 ```bash
 npm run server
@@ -29,7 +29,7 @@ bun server
 Open [http://localhost:3001](http://localhost:3001) with your browser to see the result.
 
 
-## Learn More
+## View project
 
 <div align="center">
   <img src="public/images/Page 1.png" alt="Tabela" width="800">
