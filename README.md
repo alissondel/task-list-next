@@ -31,7 +31,8 @@ Open [http://localhost:3001](http://localhost:3001) with your browser to see the
 
 ## Learn More
 
-<div>
-<img src="public/images/Page 1.png" alt="Logo da Minha Empresa" width="500" style="display: inline-block; margin-right: 10px;">
-<img src="public/images/Page 2.png" alt="Logo da Minha Empresa" width="500" style="display: inline-block;">
+<div align="center">
+  <img src="public/images/Page 1.png" alt="Logo da Minha Empresa" width="500">
+  <br>
+  <img src="public/images/Page 2.png" alt="Logo da Minha Empresa" width="200">
 </div>
