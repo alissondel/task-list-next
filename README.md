@@ -32,7 +32,7 @@ Open [http://localhost:3001](http://localhost:3001) with your browser to see the
 ## Learn More
 
 <div align="center">
-  <img src="public/images/Page 1.png" alt="Logo da Minha Empresa" width="500">
+  <img src="public/images/Page 1.png" alt="Logo da Minha Empresa" width="800">
   <br>
-  <img src="public/images/Page 2.png" alt="Logo da Minha Empresa" width="200">
+  <img src="public/images/Page 2.png" alt="Logo da Minha Empresa" width="300">
 </div>
