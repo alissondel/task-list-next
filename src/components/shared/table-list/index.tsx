@@ -4,6 +4,7 @@ import { cn } from '@/lib/utils'
 import { Modal } from './modal'
 import { Badge } from '@/components/ui/badge'
 import { Input } from '@/components/ui/input'
+import { format } from 'date-fns'
 import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from '@/components/ui/skeleton'
 import { FormModal } from '../form-modal'
@@ -142,6 +143,12 @@ export const TableList = ({
           return sortOrder === 'asc'
             ? Number(aValue) - Number(bValue)
             : Number(bValue) - Number(aValue)
+        case 'date':
+          const dateA = new Date(aValue as Date) //eslint-disable-line
+          const dateB = new Date(bValue as Date) //eslint-disable-line
+          return sortOrder === 'asc'
+            ? dateA.getTime() - dateB.getTime()
+            : dateB.getTime() - dateA.getTime()
         case 'status':
           return sortOrder === 'asc'
             ? Number(aValue) - Number(bValue) // false (0) vem antes de true (1)
@@ -198,6 +205,17 @@ export const TableList = ({
       setSortedTasks(filteredTasks)
     }
   }
+
+  // const handleFilterDate = (value: Date) => {
+  //   if (data) {
+  //     const filteredTasks = data.filter((task) => {
+  //       task.date === value
+  //       return true // Exibe todas as tarefas com data específica
+  //     })
+
+  //     setSortedTasks(filteredTasks)
+  //   }
+  // }
 
   // Calcula os índices dos itens da página atual
   const indexOfLastItem = currentPage * itemsPerPage
@@ -359,6 +377,19 @@ export const TableList = ({
             </TableHead>
             <TableHead className="w-[100px]">
               <div className="flex items-center justify-center gap-1">
+                <span>Data</span>
+                <ArrowDownUp
+                  size={16}
+                  className={cn(
+                    'cursor-pointer transition-colors hover:text-sky-900',
+                    sortOrder === 'desc' ? 'text-amber-600' : '',
+                  )}
+                  onClick={() => handleOrderBy('date')}
+                />
+              </div>
+            </TableHead>
+            <TableHead className="w-[100px]">
+              <div className="flex items-center justify-center gap-1">
                 <span>Situação</span>
                 <ArrowDownUp
                   size={16}
@@ -412,6 +443,7 @@ export const TableList = ({
                   </Tooltip>
                 </TooltipProvider>
               </TableCell>
+              <TableCell>{format(task.date, 'dd/MM/yyyy')}</TableCell>
               <TableCell>
                 {task.status ? (
                   <Badge variant="secondary">Ativo</Badge>
@@ -436,7 +468,7 @@ export const TableList = ({
         </TableBody>
         <TableFooter>
           <TableRow>
-            <TableCell colSpan={6}>
+            <TableCell colSpan={7}>
               <Pagination>
                 <PaginationContent>
                   <PaginationItem>

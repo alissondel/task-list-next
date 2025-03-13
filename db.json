@@ -8,7 +8,8 @@
       "status": true,
       "title": "Relatório de atendimento",
       "description": "Criar relatório de atendimento ao cliente.",
-      "id": "63514f6a-1638-4bd5-ba97-af299c8ad825"
+      "id": "63514f6a-1638-4bd5-ba97-af299c8ad825",
+      "date": "2025-03-13T00:19:04.064Z"
     },
     {
       "priority": [
@@ -18,7 +19,8 @@
       "status": true,
       "title": "Reunião da Tarde",
       "description": "Reunião marcada hoje 11/03/2025 às 15 horas.",
-      "id": "81a03d46-83d2-4ff7-950f-c609e009a4d3"
+      "id": "81a03d46-83d2-4ff7-950f-c609e009a4d3",
+      "date": "2025-03-13T00:19:04.064Z"
     },
     {
       "priority": [
@@ -28,7 +30,8 @@
       "status": true,
       "title": "Fazer Compras",
       "description": "Fazer compras",
-      "id": "1db3f610-ea9c-4b8f-b1dc-640d7ab1ed31"
+      "id": "1db3f610-ea9c-4b8f-b1dc-640d7ab1ed31",
+      "date": "2025-03-13T00:19:04.064Z"
     },
     {
       "priority": [
@@ -38,9 +41,11 @@
       "status": true,
       "title": "Ir no Psicologo",
       "description": "Marcado para ir ao psicólogo às 14 horas de hoje.",
-      "id": "83ea950d-7fdf-4bde-a7a5-987e5b82499d"
+      "id": "83ea950d-7fdf-4bde-a7a5-987e5b82499d",
+      "date": "2025-03-13T00:19:04.064Z"
     },
     {
+      "date": "2025-03-14T03:00:00.000Z",
       "priority": [
         1
       ],
@@ -58,7 +63,19 @@
       "status": false,
       "title": "Escutar Podcast",
       "description": "Escutar Podcast",
-      "id": "04789811-7539-448c-85ed-67257aad4876"
+      "id": "04789811-7539-448c-85ed-67257aad4876",
+      "date": "2025-03-13T00:19:04.064Z"
+    },
+    {
+      "date": "2025-03-13T03:00:00.000Z",
+      "priority": [
+        5
+      ],
+      "type": "Semanal",
+      "status": true,
+      "title": "wdadawdwadawd",
+      "description": "wadawdawdawd",
+      "id": "d844f771-66ea-459d-9f17-48f5fc9e198d"
     }
   ]
 }

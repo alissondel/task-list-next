@@ -1,6 +1,7 @@
 import { z } from 'zod'
 
 export const TaskSchema = z.object({
+  date: z.date(),
   priority: z.number().array(),
   type: z.string().min(1, 'Tipo da tarefa é obrigatório'),
   status: z.boolean(),
@@ -21,4 +22,5 @@ export const intialState = {
   type: '',
   priority: [5],
   status: true,
+  date: new Date(),
 }

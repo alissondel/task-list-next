@@ -21,6 +21,7 @@ import { TextAreaCustom } from '@/components/ui/textarea/textarea'
 import { SwitchCustom } from '@/components/ui/switch/switch'
 import { SelectCustom } from '@/components/ui/select/select'
 import { SliderCustom } from '@/components/ui/slider/slider'
+import { DatePicker } from '@/components/ui/datepicker/datepicker'
 
 interface FormModalProps {
   openModal: boolean
@@ -47,8 +48,11 @@ export const FormModal = ({
 
   // Verifica se irá criar ou editar as tarefas
   useEffect(() => {
-    if (selectedTask.id !== '') return reset(selectedTask)
-    else return reset(intialState)
+    if (selectedTask.id !== '') {
+      reset({ ...selectedTask, date: new Date(selectedTask.date) }) // Converte para Date
+    } else {
+      reset(intialState)
+    }
   }, [selectedTask, reset])
 
   const mutationCreate = useMutation({
@@ -86,6 +90,8 @@ export const FormModal = ({
   })
 
   function onSubmit(data: TaskSchemaInfer) {
+    console.log('chegou aqui')
+    console.log('data: ' + data)
     if (selectedTask.id !== '') return mutationUpdate.mutate(data)
     else mutationCreate.mutate(data)
   }
@@ -122,15 +128,20 @@ export const FormModal = ({
               label="Tipo da Tarefa:"
               containerClassname="mb-4 grid grid-cols-4 gap-4"
             />
-            <SwitchCustom
-              name="status"
-              label="Status:"
+            <DatePicker
+              name="date"
+              label="Selecionar Dia da Tarefa:"
               containerClassname="mb-4 grid grid-cols-4 gap-4"
             />
             <SliderCustom
               name="priority"
               label="Nivel de prioridade:"
               containerClassname="mb-4 grid grid-cols-4 gap-4 "
+            />
+            <SwitchCustom
+              name="status"
+              label="Status:"
+              containerClassname="mb-4 grid grid-cols-4 gap-4"
             />
             <DialogFooter>
               <ButtonCustom
@@ -144,7 +155,7 @@ export const FormModal = ({
                 type="submit"
                 variant="ghost"
                 name="Salvar"
-                className="bg-blue-800 font-semibold text-zinc-100 hover:bg-blue-700 hover:text-zinc-100 disabled:bg-zinc-500"
+                className="cursor-pointer bg-blue-800 font-semibold text-zinc-100 hover:bg-blue-700 hover:text-zinc-100 disabled:bg-zinc-500"
               />
             </DialogFooter>
           </form>
